@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <title>Inventario</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+        <script src="cordova.js" id="xdkJScordova_"></script>
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/funciones.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+    </head>
+
+    <body onload="cargarTabla();">
+        <div class="upage wrapping-col left" id="mainpage">
+            <div id="content" class="pull-left">
+                <div id="column-left"></div>
+                <button class="btn widget uib_w_3 d-margins btn-lg btn-danger" id="btnAgregar" data-uib="twitter%20bootstrap/button" data-toggle="modal" data-target="#myModal"  data-ver="1"><img src="img/agregarProducto.png"></button>
+                <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="z-index: 1;">Open Modal</button>-->
+            </div>
+            <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
+                <div class="col uib_col_2 col-0_12-12" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col">
+                        <div class="table-thing widget uib_w_2 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                            <label class="narrow-control" for="filter"></label>
+                            <input class="wide-control form-control default" type="search" placeholder="Buscar Producto..." id="filter">
+                        </div>
+                        <a class="btn widget uib_w_1 d-margins btn-danger" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnEscanear"><i class="glyphicon glyphicon-camera button-icon-left" data-position="left"></i>Escanear Codigo</a>
+                        <span class="uib_shim"></span>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Productos</th>
+                                </tr>
+                            </thead>
+                            <tbody class="searchable" id="tablaProductos">
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <span class="uib_shim"></span>
+            </div>
+        </div>
+        <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Agregar Producto</h4>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+              <label class="control-label" for="Clave">Clave:</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Clave..." name="clave" id="claveAgregar">
+                  <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" onclick="clave();"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+                  </span>
+                </div><!-- /input-group -->
+            </div>
+           <div class="form-group">
+              <label class="control-label" for="Descripcion">Descripci&oacute;n:</label>
+              <input type="text" class="form-control" name="descripcion" placeholder="Descripci&oacute;n..." maxlength="50">
+          </div>
+            <div class="form-group">
+              <label class="control-label" for="Precio">Precio al p&uacute;blico:</label>
+              <input type="text" text="numeric" class="form-control" name="precio" placeholder="Precio al p&uacute;blico..." id="precio"  onkeypress="return NumCheck(event, this);">
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" onclick="callWebService();">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </body>
+
+</html>

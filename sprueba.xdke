@@ -1,0 +1,22 @@
+{
+  "project": {
+    "projectSettingsVersion": "3.0.0",
+    "currentBuildConfiguration": "Android",
+    "projectFiles": {},
+    "projectDirectories": {},
+    "currentService": {
+      "service": "db_core"
+    }
+  },
+  "editorTab": {
+    "currentEditorMode": 0
+  },
+  "build-tab": {
+    "selectedTargets": [
+      "CORDOVA_ANDROID",
+      "CORDOVA_WINDOWS_UAP",
+      "CORDOVA_WINDOWS8",
+      "CORDOVA_WP8"
+    ]
+  }
+}

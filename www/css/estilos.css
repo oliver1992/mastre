@@ -1,0 +1,31 @@
+      @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+           #content {
+               /*position:relative;
+               bottom:0px;
+               right:0px;*/
+                  width: 60px;
+                  position: absolute;
+                 border-radius: 30px;
+                  right: 20px;
+                  bottom: 75px;
+                  left: 75%;
+                  padding: 1rem;
+                  text-align: left;
+            }
+
+            #btnAgregar {
+                width: 64px;
+                height: 64px;
+                text-align: center;
+                font-size: 12px;
+                line-height: 1.42;
+                border-radius: 32px;
+                float: right;
+                position: fixed;
+                margin-bottom: 0px;
+                margin-right: 20px;
+                overflow: hidden;
+                text-align: center;
+                z-index: 1;
+            }
